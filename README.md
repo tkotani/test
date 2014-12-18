@@ -63,7 +63,7 @@ in addition to our papers (in the references).
 Install and test
 -----------------------------
 To get a ecalj package, do  
->>git clone https://github.com/tkotani/ecalj.git
+\>git clone https://github.com/tkotani/ecalj.git
 Then follow these steps explained below.
 
 (0) Get ecalj package and get tools.  
