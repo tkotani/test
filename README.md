@@ -157,7 +157,7 @@ manner. But usually Make.inc.gfortran works without changes
 
 Let us think about an ifort case.
 In this case, we run  
->make PLATFORM=ifort LIBMATH='-lmkl'   
+>make PLATFORM=ifort LIBMATH='-mkl'   
 
 There are several MAKEINC/Make.inc.ifort*
 (not _mpik*) with which we installed to machines. 
@@ -191,7 +191,7 @@ This just copy required files (binaries and scripts) to your ~/bin.
 make with BINDIR=xxx.
 
 (For CMD workshop participants: run  
->make PLATFORM=ifort.cmd LIBMATH='-lmkl' BINDIR=~/bin
+>make PLATFORM=ifort.cmd LIBMATH='-mkl' BINDIR=~/bin
 
 which corresponds to MAKEINC/Make.inc.ifort.cmd
 We did not set "-heap-array 100" option since it give not working
@@ -315,46 +315,40 @@ Set the variable of VESTA=, at the begining of
 
 ### How to do version up? ###
 
-We do not have enough human resource to keep it very well. 
-Thus, be careful to do version up. It may cause another problem.
-But it is not so difficult to move it back to original version
-if you use git.
-An important things is your own Make.inc.* files. Keep it by yourself,
-or by a command ./mbackup (look into it first).
+Be careful to do version up. It may cause another problem.
+But it is not so difficult to move it back to original version if you use git.
+An important things is keeping your changes by yourself.
+Especially your own Make.inc.* files (see InstalAll.ifort).
 
->cd ecalj
->git log 
+>cd ecalj  
+>git log  
+
    This shows what version you use now.
->git diff > gitdiff_backup   
-   This is to save your changes added to the original (to a file git_diff_backup ) for safe.
-   I recommend you do take git diff >foobar as backup. >git stash also
-   move your changes to stash.
->./mbackup          
-    This save makefiles and related files. Look into the ./mbackup file. It is a simple scripts.
-    Your customized Makefile MAKEINC/* fpgw/exec/make* are copied to ecalj/MKbackup/. 
-    CAUTION: this overwirte old ones.
+
+>git diff > gitdiff_backup    
+
+This is to save your changes added to the original (to a file git_diff_backup ) for safe.
+   I recommend you do take git diff >foobar as backup.   
+   >git stash also move your changes to stash.
+
 >git checkout -f             
      CAUTION!!!: this delete your changes in ecalj/.
      This recover files controlled by git to the original which was just downloaded.
+
 >git pull                    
     This takes all new changes.
->./mrestore                  
-    Look into this script before you use this.
-    This copy make.inc* and MAKEINC/* back to original directory.
+
 
 I think it is recommended to use 
 >gitk --all 
-and read this document 
-README to check what is added recently. Difference can be easily taken,
+
+and read this document. Difference can be easily taken,
 e.g. by >git diff d2281:README 81d27:README (here d2281 and 81d27 are
-top several digits of version id). 
->git show 81d27:README is also useful.
-
-After ./mrestore, following instruction of the above installation.
-Probably, you don't need to make cleanall (this delete all binaries).
+several digits of the begining of its version id). 
+>git show 81d27:README is also useful.  
 
 
-
+<pre>
 ###### Documents of ecalj #####################
 We have three documents.
 
@@ -617,6 +611,9 @@ other to DO
 
  You can insert your own note in souce code.
 
---------- end of file -----------------
+</pre>
+
+end of file
+--------- 
 
 
