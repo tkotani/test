@@ -48,9 +48,9 @@ We need acknowledgment as
 ----------------------------------------------------------
 For your publications, please make two citations directly 
 to this homepage as;
-* [1] ecalj package at https://github.com/tkotani/ecalj/. 
+[1]. ecalj package at https://github.com/tkotani/ecalj/. 
   Its one-body part is developed based on Ref.[2].
-* [2] LMsuit package at http://www.lmsuite.org/. 
+[2]. LMsuit package at http://www.lmsuite.org/. 
      Its GW part is adopted mainly from Ref.[1].
 in addition to our papers (in the references).
 
