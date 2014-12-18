@@ -74,6 +74,7 @@ In the following explanation, we assume gfortran in ubuntu.
 But we can also use ifort, and others in your environment with
 minimum changes in makefiles.
 
+
 ##### (0) Get ecalj package and get tools.
 --- Let us assume you use ubuntu. ---
 You need following tools and libraries to be installed.  
@@ -86,9 +87,6 @@ You need following tools and libraries to be installed.
 \>sudo apt-get install liblapack3gf   or something else  # LAPACK  
 \>sudo apt-get install etags csh bash tcsh gawk  # shells  
 
-To get a ecalj package, do  
-\>git clone https://github.com/tkotani/ecalj.git  
-
 Note that python 2.x is also assumed 
 (usually already in ubuntu. Type \>python (ctrl+D for quit)).
 
@@ -96,25 +94,26 @@ Version ctrl is by git (which makes things easier, but not
 necessarily required for installation).
 
 After you have installed git (version control software), 
-you can get ecalj package by
->git clone https://github.com/tkotani/ecalj.git # Get source code for ecalj.
-or get it in *.zip from the page https://github.com/tkotani/ecalj
+you can get ecalj package by  
+\>git clone https://github.com/tkotani/ecalj.git # Get source code  
+for ecalj. or get it in the form *.zip 
+from the page https://github.com/tkotani/ecalj
 (push zip button). I recommend you to use git, 
-to check your changes (>git diff), and know version id.
-After the above git clone command, a directory ecalj/ appears
+to check your changes (\>git diff), and know version id.
+After you did the above git clone command, a directory ecalj/ appears
 (under the directory at which you did git clone).
 
-We suppose you have ecalj/ and bin/ at your home directory, 
-but it can be at any directory. All are described with relative path.
-(except ~/bin, which is a directory containing all required binaries and scripts.
- You can also specify other directory instead of ~/bin in makefiles.).
+Let use assume that you have ~/ecalj/ and ~/bin/ at your home directory.
+(All under ~/ecalj are described with relative path. 
+Thus you can put ecalj/ anywhere. If you like to use a directory
+instead of ~/bin/, you have to set "BINDIR=" in ~/ecalj/InstallAll.foobar.).
 
 We can check history of ecalj code development by
-">gik --all" at ecalj/ directory after you did git clone.
+"\>gik --all" at ecalj/ directory after you did git clone.
 
-=====NOTE: Automatic command (1)-(4) ====================================
-NOTE: Nove19 (2014) Following procedures, (1)-(4), are done automatically
-by a script ,e.g., ./InstallAll.ifort.bash for intel fortran as;
+=====NOTE: Automatic command from (1) through (4) ========================  
+NOTE: Nove19 (2014). Following procedures, (1)-(4), are done automatically
+by a script ,e.g., ./InstallAll.ifort (in the case of intel fortran) as;
 ---
 cd ecalj
 ./InstallAll.ifort.bash
@@ -143,7 +142,6 @@ you need to prepare not only InstallAll.ifort11.machine1.bash, but also
 In these files, you have to set compilar, linker, compilar options.
 
 Users can skip to (5) if things finished well.
-=========================================================================
 
 ##### (1) make single core LDA part (it is in ecalj/lm7K/).
 Let us assume gfortran case.
