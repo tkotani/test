@@ -1,58 +1,56 @@
 ecalj 
 ============
- This is read me at https://github.com/tkotani/ecalj. (checked at Dec2014)
-
- We can perform PMT-QSGW, the quasiparticle self-consistent GW method 
- in the L(APW+MTO)=PMT method. The PMT allows us to perform
- calculations virtually automatically (10.7566/JPSJ.83.094711). 
+ A first-principle electronic structure calculation package in
+ f90, especially for the PMT-QSGW. The PMT allows us to perform
+ the QSGW calculations virtually automatically (10.7566/JPSJ.83.094711). 
 
  We have a tutorial course at CMD workshops held by Osaka university (every
  March and Sep). http://phoenix.mp.es.osaka-u.ac.jp/CMD/index_en.html
 
+ This is read me at https://github.com/tkotani/ecalj. (checked at Dec2014)
+
 Overview
 ------------
 
-A first-principle electronic structure calculation package in
-f90, especially for the PMT-QSGW. 
-
 1.  All electron full-potential PMT method: a mixed basis method of two
    kinds of augmented waves, that is, L(APW+MTO). 
-   In principle, it is possible to perform default calculations just
-   from atomic structures.
    Relaxiation of atomic positions is possible in GGA/LDA and LDA+U.
-   A converter between POSCAR(VASP) and our crystal strucrue file
-   'ctrls.*' is included. (a small program---but slight buggy; let
-   T.Kotani know problems in it; need to supply numerically accurate
-   atomic positions to judge crystal symmetry from atomic positions).
    Our recent development shows that very localized MTO (damping
    factor is \sim 1 a.u), together with APW
-   (cutoff is \sim 3 to 4 Ry) works well to get good convergences.
+   (cutoff is \sim 3 to 4 Ry) works well to get reasonable convergences.
+   In principle, it is possible to perform default calculations just
+   from atomic structures.
    
 2. The PMT-QSGW method, that is,
    the Quasiparticle self-consistent GW method (QSGW) based on the PMT method. 
    In addion, we can calculate dielectric functions, spin fluctuations,
    spectrum function of the Green's functions and so on.
-   GW-related codes are in ecalj/fpgw/.
+   GW-related codes are in ~/ecalj/fpgw/.
    For paralellized calculations, 
    we can use lmf-MPIK and mpi version of hvccfp0,hx0fp0_sc,hsfp0_sc.
-   (although we have so much room to improve it).
+   (although we still have so much room to improve it).
 
 3.  Wannier function generator and effective model generator
-   (Maxloc Wannier and effective interaction between them). 
-   This is mainly due to Dr.Miyake,Dr.Sakuma, and Dr.Kino.
-   fpgw/Wannier/README
+   (Maxloc Wannier and effective interaction between Wannier funcitons). 
+   This is mainly from Dr.Miyake,Dr.Sakuma, and Dr.Kino.
+   See fpgw/Wannier/README.
 
 We have another home page at http://pmt.sakura.ne.jp/wiki/, but
 not well-organized yet, little in English yet. We will renew it.
 
+A converter between POSCAR(VASP) and our crystal strucrue file
+'ctrls.*' is included. (a small program---slightly buggy; let
+T.Kotani know problems in it). Note that we should 
+supply numerically accurate atomic positions to judge 
+crystal symmetry automatically).
 
 We need acknowledgment.
 ----------------------------------------------------------
 For your publications, please make two citations directly 
 to this homepage as;
-[1] ecalj package at https://github.com/tkotani/ecalj/. 
+* [1] ecalj package at https://github.com/tkotani/ecalj/. 
   Its one-body part is developed based on Ref.[2].
-[2] LMsuit package at http://www.lmsuite.org/. 
+* [2] LMsuit package at http://www.lmsuite.org/. 
      Its GW part is adopted mainly from Ref.[1].
 in addition to our papers. 
 These citaitons really help developing ecalj.
