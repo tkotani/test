@@ -1,9 +1,15 @@
 ecalj 
 ============
+ This is read me at https://github.com/tkotani/ecalj.
+ We can perform PMT-QSGW, the quasiparticle self-consistent GW method 
+ in the L(APW+MTO)=PMT method. The PMT allows us to perform
+ calculations virtually automatically (10.7566/JPSJ.83.094711). 
+
+ We have a tutorial course at CMD workshops held by Osaka university (every
+ March and Sep). http://phoenix.mp.es.osaka-u.ac.jp/CMD/index_en.html
+
 Overview
 ------------
-The homepage of ecalj, https://github.com/tkotani/ecalj,
-shows current status and this README.
 
 A first-principle electronic structure calculation package in
 f90, especially for the PMT-QSGW. (this document is checked at Dec2014)
@@ -41,14 +47,13 @@ not well-organized yet, little in English yet. We will renew it.
 
 We need acknowledgment in publications
 ----------------------------------------------------------
-For your publications, please make two citations as;
+For your publications, please make two citations directly 
+to this homepage as;
  [1] ecalj package at https://github.com/tkotani/ecalj/. 
-     Its one-body part is originally adopted from Ref.[2].
+     Its one-body part is developed based on Ref.[2].
  [2] LMsuit package at http://www.lmsuite.org/. 
      Its GW part is adopted mainly from Ref.[1],
-in addition to related papers.
----------------------------------------------------------
-
+in addition to our papers.
 
 Install and test
 -----------------------------
