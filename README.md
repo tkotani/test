@@ -89,7 +89,6 @@ You need following tools and libraries to be installed.
 
 Note that python 2.x is also assumed 
 (usually already in ubuntu. Type \>python (ctrl+D for quit)).
-
 Version ctrl is by git (which makes things easier, but not
 necessarily required for installation).
 
@@ -100,7 +99,7 @@ you can get ecalj package by
 for ecalj. or get it in the form *.zip 
 from the page https://github.com/tkotani/ecalj
 (push zip button). I recommend you to use git, 
-to check your changes (\>git diff), and know version id.
+to check your changes (\>git diff), know version id, and upgrade.
 After you did the above git clone command, a directory ecalj/ appears
 (under the directory at which you did git clone).
 
