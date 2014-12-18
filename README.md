@@ -78,14 +78,14 @@ minimum changes in makefiles.
 ##### (0) Get ecalj package and get tools.
 --- Let us assume you use ubuntu. ---
 You need following tools and libraries to be installed.  
-\>sudo apt-get install git  #version control and to get source from github  
-\>sudo apt-get install gitk #git gui.   
-\>sudo apt-get install gfortran      # GFORTRAN  
-\>sudo apt-get install openmpi-bin openmpi-dev     # MPI  
-\>sudo apt-get install libfftw3-3     or something else # FFTW  
-\>sudo apt-get install libblas3gf     or something else # BLAS  
-\>sudo apt-get install liblapack3gf   or something else  # LAPACK  
-\>sudo apt-get install etags csh bash tcsh gawk  # shells  
+\sudo apt-get install git  #version control and to get source from github  
+\sudo apt-get install gitk #git gui.   
+\sudo apt-get install gfortran      # GFORTRAN  
+\sudo apt-get install openmpi-bin openmpi-dev     # MPI  
+\sudo apt-get install libfftw3-3     or something else # FFTW  
+\sudo apt-get install libblas3gf     or something else # BLAS  
+\sudo apt-get install liblapack3gf   or something else  # LAPACK  
+\sudo apt-get install etags csh bash tcsh gawk  # shells  
 
 Note that python 2.x is also assumed 
 (usually already in ubuntu. Type \>python (ctrl+D for quit)).
@@ -111,14 +111,14 @@ instead of ~/bin/, you have to set "BINDIR=" in ~/ecalj/InstallAll.foobar.).
 We can check history of ecalj code development by
 "\>gik --all" at ecalj/ directory after you did git clone.
 
-=====NOTE: Automatic command from (1) through (4) ========================  
-NOTE: Nove19 (2014). Following procedures, (1)-(4), are done automatically
+#### Automatic command from (1) through (4)  
+Nove19 (2014). Following procedures, (1)-(4), are done automatically
 by a script ,e.g., ./InstallAll.ifort (in the case of intel fortran) as;
----
-cd ecalj
-./InstallAll.ifort.bash
-(To clean all, do ./CleanAll.ifort.bash).
----
+
+>cd ecalj
+>./InstallAll.ifort.bash
+>(To clean all, do ./CleanAll.ifort.bash).
+
 Please look into the script "InstallAll.ifort.bash". 
 It contains the setting of your bin directory
 at which you will copy all your binaries, and math library.
