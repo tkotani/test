@@ -131,15 +131,17 @@ in which you have to set compilar, linker, compilar options.
 
 When InstallAll.ifort works well, it will show OK! sign finally.
 (one last test (nio_gwsc) may fail in cases, but usually no problem).
+The skip following (1) thru (4). (5) is also not necessary.
 
 ##### (1) make single core LDA part (it is in ecalj/lm7K/).
 Let us assume gfortran case.
 Move to ecalj/lm7K/, then do "make PLATFORM=gfortran LIBMATH=xxx". 
-Then make process start. (LIBMATH
+Then make process start. (LIBMATH= specify BLAS,Lapack, and fftw.)
 The main makefile is ecalj/lm7K/Makefile, which contains lines
->  PLATFORM=gfortran   #default is PLATFORM=gfortran
->  ...
->  include MAKEINC/Make.inc.$(PLATFORM)
+>  PLATFORM=gfortran   #default is PLATFORM=gfortran  
+>  ...  
+>  include MAKEINC/Make.inc.$(PLATFORM)  
+
 This means that this Makefile uses ecalj/lm7K/MAKEINC/Make.inc.gfortran
 as a part of the Makefile. Thus we have to check settings in it 
 in advance to run "make PLATFORM=...".
