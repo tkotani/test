@@ -210,9 +210,10 @@ am not so sure about this.
 
 (For CMD workshop participants: run  
  >make PLATFORM=ifort_mpik.cmd LIBMATH='-mkl'
- which corresponds to MAKEINC/Make.inc.ifort_mpik.cmd)
 
-Clean up:  
+which corresponds to MAKEINC/Make.inc.ifort_mpik.cmd)
+
+*Clean up:  
 If something wrong. do "make clean" or "make cleanall" and start over.
 Look into Makefile if you like to know what they do.
 "make cleanall" removes all *.o *.a modules, and binaries.
@@ -231,22 +232,24 @@ For each machine you have to prepare your own make.inc.foobar
 (There are samples. Here is the case of make.inc.ifort.cmd), 
 and do  
 >ln -s make.inc.ifort.cmd make.inc  
+
 to make a soft like make.inc -> make.inc.cmd
 
-*Q. What is soft link foo -> bar?  A. "foo" is an alias of the file "bar".  
+* Q. What is soft link foo -> bar?  A. "foo" is an alias of the file "bar".  
 
 Then you have to run  
 >make  
 >make install  
 >make install2  
+
 Before this, you have to set blas and lapack in fpge/exec/make.inc.
 (for ifort, -mkl is enough. LIBMATH= should be the same as that in Make.inc.*.
 "make install" copy requied files to your ~/bin.
 
-[Caution!: we often see "Segmentation fault"due to stacksize limit 
+* Caution!: we often see "Segmentation fault"due to stacksize limit 
 (See the size by a command "ulimit -a"). 
 It is needed to run "ulimit -s unimited" in the job-submition script 
-or before running GW jobs. ]
+or before running GW jobs. 
 
 
 ##### (4) Install test
@@ -260,6 +263,7 @@ All tests may require ~10min or a little more.  (nio_gwsc takes ~300sec)
 In cases, nio_gwsc fails, showing  
  >FAILED: nio_gwsc QPU compared by ./bin/dqpu  
  >PASSED: nio_gwsc diffnum  
+
 However, we do not need to care its failure sign. (so nio_gwsc test
 must be improved...). (numerically small differences).
 
@@ -267,14 +271,14 @@ Help of make (no arguments) at ecalj/TestInstall, shows
 >make lmall   !tests only LDA part.  
 >make gwall   !tests only GW part.  
 
-NOTE (nov19 2014 kino):   
+* NOTE (nov19 2014 kino):   
 In TestInstall/Makefile.define, we define  
 LMF=lmf  
 LMFP=lmf-MPIK  
 (it is possible to use "LMFP=lmf-MPI" instead(for future development).
 If we set LMFP=$(LMF), tests are done with using lmf, not with using lmf-MPIK.
 
-NOTE: in principle, repeat make should do nothing when all binaries
+* NOTE: in principle, repeat make should do nothing when all binaries
 are correctly generated. However, because of some problem in makefile, 
 you may see some make procedure is repeated. You can neglect it as
 long as "All test are passed!" is shown in the (4)install test.
