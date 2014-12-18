@@ -156,6 +156,7 @@ manner. But usually Make.inc.gfortran works without changes
 Let us think about an ifort case.
 In this case, we run  
 >make PLATFORM=ifort LIBMATH='-lmkl'   
+
 There are several MAKEINC/Make.inc.ifort*
 (not _mpik*) with which we installed to machines. 
 You can choose one of them or you can set your own Make.inc.ifort.*
@@ -175,18 +176,21 @@ FFLAGS=-O2, but failed with FFLAGS=-O3. (I am not sure now).
 
 Parallel make like  
 >make -j24 PLATFORM=gfortran  
+
 can speed it up for multicore machines(24 core in this case). 
 But it stops because of dependency is not well-described in our current Makefile. 
 In such case, repeat it a few times, or repeat it without -j24.
 
 Finally run  
 >make PLATFORM=gfortran install  
+
 This just copy required files (binaries and scripts) to your ~/bin.
 (check it in Makefile). If you like to copy them to ~/xxx instead of~/bin,
 make with BINDIR=xxx.
 
 (For CMD workshop participants: run  
 >make PLATFORM=ifort.cmd   
+
 which corresponds to MAKEINC/Make.inc.ifort.cmd
 We did not set "-heap-array 100" option since it give not working
 binaries.)  
