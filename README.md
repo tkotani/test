@@ -133,6 +133,8 @@ When InstallAll.ifort works well, it will show OK! sign finally.
 (one last test (nio_gwsc) may fail in cases, but usually no problem).
 The skip following (1) thru (4). (5) is also not necessary.
 
+
+---
 ##### (1) make single core LDA part (it is in ecalj/lm7K/).
 Let us assume gfortran case.
 Move to ecalj/lm7K/, then do "make PLATFORM=gfortran LIBMATH=xxx". 
@@ -189,33 +191,32 @@ This just copy required files (binaries and scripts) to your ~/bin.
 make with BINDIR=xxx.
 
 (For CMD workshop participants: run  
->make PLATFORM=ifort.cmd   
+>make PLATFORM=ifort.cmd LIBMATH='-lmkl' BINDIR=~/bin
 
 which corresponds to MAKEINC/Make.inc.ifort.cmd
 We did not set "-heap-array 100" option since it give not working
 binaries.)  
 
-
 ##### (2) make MPI LDA part.
-lmf-MPIK and lmfgw-MPIK are needed for gwsc. These are k-point
-parallel version of lmf, and gw driver lmfgw. To make it, do
-"make PLATFORM=gfortran_mpik". 
-For ifort, set PLATFORM=ifort_mpik
-Then Makefile uses ecalj/lm7K/MAKEINC/Make.inc.ifort_mpik is used.
+lmf-MPIK and lmfgw-MPIK are needed for gwsc (srcipt for QSGW). 
+These are k-point parallel version of lmf, and gw driver lmfgw. To
+make it, do  
+"make PLATFORM=gfortran_mpik".  
+For ifort, set PLATFORM=ifort_mpik.  
+Then Makefile includes ecalj/lm7K/MAKEINC/Make.inc.ifort_mpik.
 You may need to add -heap-arrays 1 (for large calculations. Because we
 use large stacksize) to ecalj/lm7K/MAKEINC/Make.inc.ifort_mpi, but I
 am not so sure about this.
 
-(For CMD workshop participants: run
- >make PLATFORM=ifort_mpik.cmd 
+(For CMD workshop participants: run  
+ >make PLATFORM=ifort_mpik.cmd LIBMATH='-mkl'
  which corresponds to MAKEINC/Make.inc.ifort_mpik.cmd)
 
-Clean up:
+Clean up:  
 If something wrong. do "make clean" or "make cleanall" and start over.
 Look into Makefile if you like to know what they do.
 "make cleanall" removes all *.o *.a modules, and binaries.
 
- ---
 * Move binaries to your bin by 
 >make install
 at ecalj/lm7K. It just moves all requied binaries to your ~/bin.
@@ -228,20 +229,19 @@ At ecalj/fpgw/exec/ directory, you have to a softlink make.inc such as
 
 For each machine you have to prepare your own make.inc.foobar 
 (There are samples. Here is the case of make.inc.ifort.cmd), 
-and do
->ln -s make.inc.ifort.cmd make.inc
+and do  
+>ln -s make.inc.ifort.cmd make.inc  
 to make a soft like make.inc -> make.inc.cmd
-(Q. What is soft link foo -> bar? 
- A. "foo" is an alias of the file "bar").
 
-Then you have to run 
->make
->make install
->make install2
+*Q. What is soft link foo -> bar?  A. "foo" is an alias of the file "bar".  
+
+Then you have to run  
+>make  
+>make install  
+>make install2  
 Before this, you have to set blas and lapack in fpge/exec/make.inc.
 (for ifort, -mkl is enough. LIBMATH= should be the same as that in Make.inc.*.
 "make install" copy requied files to your ~/bin.
-
 
 [Caution!: we often see "Segmentation fault"due to stacksize limit 
 (See the size by a command "ulimit -a"). 
@@ -254,24 +254,24 @@ We have to check whether binaries works fine or not.
 Move to ecalj/TestInstall. Then type make (with no arguments). 
 It shows help about how to do test.
 To test all of binaries, just do
->make all
-. All tests will require ~10min.  (nio_gwsc takes ~300sec)
-In cases, nio_gwsc fails, showing
- >FAILED: nio_gwsc QPU compared by ./bin/dqpu
- >PASSED: nio_gwsc diffnum
+>make all  
+. All tests will require ~10min or a little more.  (nio_gwsc takes ~300sec)
+In cases, nio_gwsc fails, showing  
+ >FAILED: nio_gwsc QPU compared by ./bin/dqpu  
+ >PASSED: nio_gwsc diffnum  
 However, we do not need to care its failure sign. (so nio_gwsc test
 must be improved...). (numerically small differences).
 
 As the help of make (no arguments), shows
->make lmall
-tests only LDA part.
->make gwall
-tests only GW part.
+>make lmall  
+tests only LDA part.  
+>make gwall  
+tests only GW part.  
 
-NOTE (nov19 2014 kino): 
-In TestInstall/Makefile.define, we define
-LMF=lmf
-LMFP=lmf-MPIK
+NOTE (nov19 2014 kino):   
+In TestInstall/Makefile.define, we define  
+LMF=lmf  
+LMFP=lmf-MPIK  
 (it is possible to use "LMFP=lmf-MPI" instead(for future development).
 If we set LMFP=$(LMF), tests are done with using lmf, not with using lmf-MPIK.
 
