@@ -255,18 +255,17 @@ Move to ecalj/TestInstall. Then type make (with no arguments).
 It shows help about how to do test.
 To test all of binaries, just do
 >make all  
-. All tests will require ~10min or a little more.  (nio_gwsc takes ~300sec)
+
+All tests may require ~10min or a little more.  (nio_gwsc takes ~300sec)
 In cases, nio_gwsc fails, showing  
  >FAILED: nio_gwsc QPU compared by ./bin/dqpu  
  >PASSED: nio_gwsc diffnum  
 However, we do not need to care its failure sign. (so nio_gwsc test
 must be improved...). (numerically small differences).
 
-As the help of make (no arguments), shows
->make lmall  
-tests only LDA part.  
->make gwall  
-tests only GW part.  
+Help of make (no arguments) at ecalj/TestInstall, shows
+>make lmall   !tests only LDA part.  
+>make gwall   !tests only GW part.  
 
 NOTE (nov19 2014 kino):   
 In TestInstall/Makefile.define, we define  
@@ -294,9 +293,9 @@ Download it, and expand it to a directory.
 VESTA can handle kinds of format of crystal structure.
 
 Then make a softlike by
-  ln -s ~/ecalj/StructureTool/viewvesta.py ~/bin/viewvesta
-  ln -s ~/ecalj/StructureTool/ctrl2vasp.py ~/bin/ctrl2vasp
-  ln -s ~/ecalj/StructureTool/vasp2ctrl.py ~/bin/vasp2ctrl
+>  ln -s ~/ecalj/StructureTool/viewvesta.py ~/bin/viewvesta
+>  ln -s ~/ecalj/StructureTool/ctrl2vasp.py ~/bin/ctrl2vasp
+>  ln -s ~/ecalj/StructureTool/vasp2ctrl.py ~/bin/vasp2ctrl
 . With this procedure we can run command viewvesta, ctrl2vasp,
 vasp2ctrl from console as long as you have ~/bin/ in the command
 search path. In my case, .bashrc have a line
