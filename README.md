@@ -96,6 +96,7 @@ necessarily required for installation).
 After you have installed git (version control software), 
 you can get ecalj package by  
 >git clone https://github.com/tkotani/ecalj.git # Get source code  
+
 for ecalj. or get it in the form *.zip 
 from the page https://github.com/tkotani/ecalj
 (push zip button). I recommend you to use git, 
