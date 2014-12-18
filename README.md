@@ -297,21 +297,23 @@ Download it, and expand it to a directory.
 VESTA can handle kinds of format of crystal structure.
 
 Then make a softlike by
->  ln -s ~/ecalj/StructureTool/viewvesta.py ~/bin/viewvesta
->  ln -s ~/ecalj/StructureTool/ctrl2vasp.py ~/bin/ctrl2vasp
->  ln -s ~/ecalj/StructureTool/vasp2ctrl.py ~/bin/vasp2ctrl
-. With this procedure we can run command viewvesta, ctrl2vasp,
+>  ln -s ~/ecalj/StructureTool/viewvesta.py ~/bin/viewvesta  
+>  ln -s ~/ecalj/StructureTool/ctrl2vasp.py ~/bin/ctrl2vasp  
+>  ln -s ~/ecalj/StructureTool/vasp2ctrl.py ~/bin/vasp2ctrl  
+ 
+With this procedure we can run command viewvesta, ctrl2vasp,
 vasp2ctrl from console as long as you have ~/bin/ in the command
 search path. In my case, .bashrc have a line
-  export PATH=$HOME/bin:$HOME/VESTA-x86_64:$PATH
-. It depends on your machine. (after editing .bashrc, you have to do
+  export PATH=$HOME/bin:$HOME/VESTA-x86_64:$PATH  
+
+It depends on your machine. (after editing .bashrc, you have to do
 "source ~/.bashrc" to reflect changes).
 
 Set the variable of VESTA=, at the begining of 
 ~/ecalj/StructureTool/viewvesta.py to let it know where is VESTA.
 
 
-##### How to do version up? ######
+### How to do version up? ###
 
 We do not have enough human resource to keep it very well. 
 Thus, be careful to do version up. It may cause another problem.
