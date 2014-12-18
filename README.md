@@ -52,8 +52,7 @@ For your publications, please make two citations directly
 to this homepage as;
 
 [1] ecalj package at https://github.com/tkotani/ecalj/. 
-Its one-body part is developed based on Ref.[2].
-
+Its one-body part is developed based on Ref.[2].  
 [2] LMsuit package at http://www.lmsuite.org/. 
 Its GW part is adopted mainly from Ref.[1].
 
@@ -62,35 +61,36 @@ in addition to our papers (in the references).
 
 Install and test
 -----------------------------
-To get a ecalj package, do  
-\>git clone https://github.com/tkotani/ecalj.git  
-Then follow these steps explained below.
+Follow these steps explained below.  
 (0) Get ecalj package and get tools.  
  --- You can run folling (1)-(4) by a command InstallAll.foobar
- command at ecalj/  
+at ecalj/  
 (1) make for single-core LDA part,   
 (2) make for MPIK LDA part,   
 (3) make for MPIK GW part.  
 (4) Install test  
-(5) crystal structure tools  
+(5) crystal structure tools  (not necessary).
 In the following explanation, we assume gfortran in ubuntu. 
-But we can also use ifort, and others in other environment with
+But we can also use ifort, and others in your environment with
 minimum changes in makefiles.
 
 ##### (0) Get ecalj package and get tools.
 --- Let us assume you use ubuntu. ---
-You need following tools and libraries to be installed.
->sudo apt-get install git  #version control and to get source from github
->sudo apt-get install gitk #git gui. 
->sudo apt-get install gfortran      # GFORTRAN
->sudo apt-get install openmpi-bin openmpi-dev     # MPI 
->sudo apt-get install libfftw3-3     or something else # FFTW
->sudo apt-get install libblas3gf     or something else # BLAS
->sudo apt-get install liblapack3gf   or something else  # LAPACK
->sudo apt-get install etags csh bash tcsh gawk  # shells
+You need following tools and libraries to be installed.  
+\>sudo apt-get install git  #version control and to get source from github  
+\>sudo apt-get install gitk #git gui.   
+\>sudo apt-get install gfortran      # GFORTRAN  
+\>sudo apt-get install openmpi-bin openmpi-dev     # MPI  
+\>sudo apt-get install libfftw3-3     or something else # FFTW  
+\>sudo apt-get install libblas3gf     or something else # BLAS  
+\>sudo apt-get install liblapack3gf   or something else  # LAPACK  
+\>sudo apt-get install etags csh bash tcsh gawk  # shells  
 
-Note that you need to use python 2.x is also assumed 
-(usually already in ubuntu. Type >python (ctrl+D for quit)).
+To get a ecalj package, do  
+\>git clone https://github.com/tkotani/ecalj.git  
+
+Note that python 2.x is also assumed 
+(usually already in ubuntu. Type \>python (ctrl+D for quit)).
 
 Version ctrl is by git (which makes things easier, but not
 necessarily required for installation).
