@@ -1,8 +1,7 @@
 ecalj 
 ============
  A first-principle electronic structure calculation package in
- f90, especially for the PMT-QSGW. The PMT allows us to perform
- the QSGW calculations virtually automatically (10.7566/JPSJ.83.094711). 
+ f90, especially for the PMT-QSGW. 
 
  We have a tutorial course at CMD workshops held by Osaka university (every
  March and Sep). http://phoenix.mp.es.osaka-u.ac.jp/CMD/index_en.html
@@ -29,6 +28,8 @@ Overview
    For paralellized calculations, 
    we can use lmf-MPIK and mpi version of hvccfp0,hx0fp0_sc,hsfp0_sc.
    (although we still have so much room to improve it).
+   The PMT allows us to perform
+   the QSGW calculations virtually automatically (10.7566/JPSJ.83.094711). 
 
 3.  Wannier function generator and effective model generator
    (Maxloc Wannier and effective interaction between Wannier funcitons). 
@@ -38,13 +39,12 @@ Overview
 We have another home page at http://pmt.sakura.ne.jp/wiki/, but
 not well-organized yet, little in English yet. We will renew it.
 
-A converter between POSCAR(VASP) and our crystal strucrue file
-'ctrls.*' is included. (a small program---slightly buggy; let
-T.Kotani know problems in it). Note that we should 
-supply numerically accurate atomic positions to judge 
+Utilities such as a converter between POSCAR(VASP) and our crystal strucrue file
+'ctrls.*' are included. (slightly buggy; let T.Kotani know problems in
+it; note that we should supply numerically accurate atomic positions to judge 
 crystal symmetry automatically).
 
-We need acknowledgment.
+We need acknowledgment as
 ----------------------------------------------------------
 For your publications, please make two citations directly 
 to this homepage as;
@@ -52,25 +52,26 @@ to this homepage as;
   Its one-body part is developed based on Ref.[2].
 * [2] LMsuit package at http://www.lmsuite.org/. 
      Its GW part is adopted mainly from Ref.[1].
-in addition to our papers. 
-These citaitons really help developing ecalj.
+in addition to our papers (in the references).
 
 
 Install and test
 -----------------------------
 To get a ecalj package, do
->git clone https://github.com/tkotani/ecalj.git
+###### >git clone https://github.com/tkotani/ecalj.git
 Then follow these steps explained below.
- (0) Get ecalj package and get tools.
+
+######  (0) Get ecalj package and get tools.
  --- You can run folling (1)-(4) by a command InstallAll.foobar command at ecalj/
- (1) make for single-core LDA part, 
- (2) make for MPIK LDA part, 
- (3) make for MPIK GW part.
- (4) Install test
------
- (5) crystal structure tools
+######  (1) make for single-core LDA part, 
+######  (2) make for MPIK LDA part, 
+######  (3) make for MPIK GW part.
+######  (4) Install test
+######  (5) crystal structure tools
+
 In the following explanation, we assume gfortran in ubuntu. 
-But we can also use ifort, and others. 
+But we can also use ifort, and others in other environment with
+minimum changes in makefiles.
 
 ##### (0) Get ecalj package and get tools.
 --- Let us assume you use ubuntu. ---
