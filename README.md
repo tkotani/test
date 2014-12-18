@@ -146,50 +146,51 @@ This means that this Makefile uses ecalj/lm7K/MAKEINC/Make.inc.gfortran
 as a part of the Makefile. Thus we have to check settings in it 
 in advance to run "make PLATFORM=...".
 LIBMATH= should contain path to the math libraries, FFTW, BLAS and LAPACK.
-An example is 
-  LIBMATH= /usr/lib/libfftw3.so.3 /usr/lib/liblapack.so.3gf /usr/lib/libblas.so.3gf
-I think FFLAGS=, FFLAGS_LESS=... can be choosed by your own manner. But usually
-Make.inc.gfortran worsk as it is.
+An example is   
+  LIBMATH="/usr/lib/libfftw3.so.3 /usr/lib/liblapack.so.3gf
+  /usr/lib/libblas.so.3gf"  
+Compilar options FFLAGS=, FFLAGS_LESS=... can be choosed by your own
+manner. But usually Make.inc.gfortran works without changes
+(let me know your changes; I like to include it in ecalj).
 
 Let us think about an ifort case.
-In this case, "make PLATFORM=ifort" usually.
+In this case, we run  
+>make PLATFORM=ifort LIBMATH='-lmkl'   
 There are several MAKEINC/Make.inc.ifort*
 (not _mpik*) with which we installed to machines. 
 You can choose one of them or you can set your own Make.inc.ifort.*
 (compilar, compilar options, math library).
-I think "make PLATFORM=ifort" works well for ifort. 
 
-But you may need to add -heap-arrays 1 
+You may need to add -heap-arrays 100 (or 0)   
 (Because we use large stacksize; but I am not so sure about this.
  In a case, -heap-arrays option did not generate working binaries.
  However, I think "ulimit -s unlimited" before QSGW calculations and
  so on works OK. So, maybe we don't need -heap-arrays option.)
-LIBMATH=-lmkl works (including BLAS+LAPACK+FFTW) for latest ifort.
-
-For other cases, run "make PLATFORM=foobar" where foobar can be ifort
-or something else. foobar corresponds to an include file 
-lm7K/MAKEINC/Make.inc.foobar. 
 
 Warning messages like ": warning: ignoring old commands for target `/vxcnls.o'" is
 just because of problem of Makefile. you can neglect this. We will fix it..
 
-Current ecalj with gfortran4.6 or 4.7 works fine with FFLAGS=-O2, but failed with FFLAGS=-O3.
+I saw that current ecalj with gfortran4.6 or 4.7 works fine with
+FFLAGS=-O2, but failed with FFLAGS=-O3. (I am not sure now).
 
-Parallel make like
->make -j24 PLATFORM=gfortran
+Parallel make like  
+>make -j24 PLATFORM=gfortran  
 can speed it up for multicore machines(24 core in this case). 
 But it stops because of dependency is not well-described in our current Makefile. 
 In such case, repeat it a few times, or repeat it without -j24.
 
-Finally do "make PLATFORM=gfortran install"
+Finally run  
+>make PLATFORM=gfortran install  
 This just copy required files (binaries and scripts) to your ~/bin.
-(check it in Makefile). If you don't like to copy them to your ~/bin,
-replace ~/bin to a directory you like, at the bottom of Makefile.
+(check it in Makefile). If you like to copy them to ~/xxx instead of~/bin,
+make with BINDIR=xxx.
 
-(For CMD workshop participants: run
- >make PLATFORM=ifort.cmd 
- which corresponds to MAKEINC/Make.inc.ifort.cmd
- We did not set "-heap-array 100" option since it give not working binaries.)
+(For CMD workshop participants: run  
+>make PLATFORM=ifort.cmd   
+which corresponds to MAKEINC/Make.inc.ifort.cmd
+We did not set "-heap-array 100" option since it give not working
+binaries.)  
+
 
 ##### (2) make MPI LDA part.
 lmf-MPIK and lmfgw-MPIK are needed for gwsc. These are k-point
