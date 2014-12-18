@@ -107,20 +107,20 @@ We can check history of ecalj code development by
 "\>gik --all" at ecalj/ directory after you did git clone.
 
 #### Automatic command from (1) through (4)  
-Nove19 (2014). Following procedures, (1)-(4), are done automatically
-by a script ,e.g., ./InstallAll.ifort (in the case of intel fortran) as;
+Following procedures, (1)-(4), are done automatically by a script,
+for example, InstallAll.ifort (in the case of intel fortran) as;
 
 >cd ecalj  
 >./InstallAll.ifort  
->(To clean all, do ./CleanAll.ifort).  
+(To clean all, do ./CleanAll.ifort).  
 
 Please look into the script "InstallAll.ifort". 
 It contains the setting of your BINDIR= directory,
 to which the InstallAll.ifort will copy all binaries and scripts.
-It internally uses three machine-comilar dependent files;
-  a.lm7K/MAKEINC/Make.inc.ifort (for single core version -->(1))
-  b.lm7K/MAKEINC/Make.inc.ifort_mpik (k-point paralell version -->(2)
-  c.fpgw/exec/make.inc.ifort  (this is only for mpi-omp version -->(3)).
+It internally uses three machine-comilar dependent files;  
+  a.lm7K/MAKEINC/Make.inc.ifort (for single core version -->(1))  
+  b.lm7K/MAKEINC/Make.inc.ifort_mpik (k-point paralell version -->(2)  
+  c.fpgw/exec/make.inc.ifort  (this is only for mpi-omp version -->(3)).  
 At the last stage of the script, it runs automatic tests.
 (You can neglect failure for nio_gwsc; it may show one-failure among two checks).
 The test may use ten minutes or more... Have a coffee!
@@ -134,12 +134,12 @@ When InstallAll.ifort works well, it will show OK! sign finally.
 
 ##### (1) make single core LDA part (it is in ecalj/lm7K/).
 Let us assume gfortran case.
-Move to ecalj/lm7K/, then do "make PLATFORM=gfortran". 
-Then make process start.
+Move to ecalj/lm7K/, then do "make PLATFORM=gfortran LIBMATH=xxx". 
+Then make process start. (LIBMATH
 The main makefile is ecalj/lm7K/Makefile, which contains lines
-  PLATFORM=gfortran   #default is PLATFORM=gfortran
-  ...
-  include MAKEINC/Make.inc.$(PLATFORM)
+>  PLATFORM=gfortran   #default is PLATFORM=gfortran
+>  ...
+>  include MAKEINC/Make.inc.$(PLATFORM)
 This means that this Makefile uses ecalj/lm7K/MAKEINC/Make.inc.gfortran
 as a part of the Makefile. Thus we have to check settings in it 
 in advance to run "make PLATFORM=...".
