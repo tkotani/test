@@ -63,9 +63,8 @@ in addition to our papers (in the references).
 Install and test
 -----------------------------
 To get a ecalj package, do  
-\>git clone https://github.com/tkotani/ecalj.git
+\>git clone https://github.com/tkotani/ecalj.git  
 Then follow these steps explained below.
-
 (0) Get ecalj package and get tools.  
  --- You can run folling (1)-(4) by a command InstallAll.foobar
  command at ecalj/  
@@ -74,7 +73,6 @@ Then follow these steps explained below.
 (3) make for MPIK GW part.  
 (4) Install test  
 (5) crystal structure tools  
-
 In the following explanation, we assume gfortran in ubuntu. 
 But we can also use ifort, and others in other environment with
 minimum changes in makefiles.
