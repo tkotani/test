@@ -95,18 +95,13 @@ necessarily required for installation).
 
 After you have installed git (version control software), 
 you can get ecalj package by  
-\>git clone https://github.com/tkotani/ecalj.git # Get source code  
+>git clone https://github.com/tkotani/ecalj.git # Get source code  
 for ecalj. or get it in the form *.zip 
 from the page https://github.com/tkotani/ecalj
 (push zip button). I recommend you to use git, 
 to check your changes (\>git diff), and know version id.
 After you did the above git clone command, a directory ecalj/ appears
 (under the directory at which you did git clone).
-
-Let use assume that you have ~/ecalj/ and ~/bin/ at your home directory.
-(All under ~/ecalj are described with relative path. 
-Thus you can put ecalj/ anywhere. If you like to use a directory
-instead of ~/bin/, you have to set "BINDIR=" in ~/ecalj/InstallAll.foobar.).
 
 We can check history of ecalj code development by
 "\>gik --all" at ecalj/ directory after you did git clone.
@@ -115,13 +110,13 @@ We can check history of ecalj code development by
 Nove19 (2014). Following procedures, (1)-(4), are done automatically
 by a script ,e.g., ./InstallAll.ifort (in the case of intel fortran) as;
 
->cd ecalj
->./InstallAll.ifort.bash
->(To clean all, do ./CleanAll.ifort.bash).
+>cd ecalj  
+>./InstallAll.ifort  
+>(To clean all, do ./CleanAll.ifort).  
 
-Please look into the script "InstallAll.ifort.bash". 
-It contains the setting of your bin directory
-at which you will copy all your binaries, and math library.
+Please look into the script "InstallAll.ifort". 
+It contains the setting of your BINDIR= directory,
+to which the InstallAll.ifort will copy all binaries and scripts.
 It internally uses three machine-comilar dependent files;
   a.lm7K/MAKEINC/Make.inc.ifort (for single core version -->(1))
   b.lm7K/MAKEINC/Make.inc.ifort_mpik (k-point paralell version -->(2)
@@ -130,18 +125,12 @@ At the last stage of the script, it runs automatic tests.
 (You can neglect failure for nio_gwsc; it may show one-failure among two checks).
 The test may use ten minutes or more... Have a coffee!
   
-Note that ./InstallAll.ifort.bash may not work for your ifort.
-Our intent is that you may prepare your own 
-./InstallAll.foobar.bash
-and the three files for your machine.
-Let us include what you have. (For example, for foobar=ifort11.machin1,
-you need to prepare not only InstallAll.ifort11.machine1.bash, but also
-  a.lm7K/MAKEINC/Make.inc.ifort11.machine1 
-  b.lm7K/MAKEINC/Make.inc.ifort11.machine1_mpik 
-  c.fpgw/exec/make.inc.ifort11.machine1
-In these files, you have to set compilar, linker, compilar options.
+InstallAll.ifort may not work for your environment.
+The you may prepare your own InstallAll.foobar,
+in which you have to set compilar, linker, compilar options.
 
-Users can skip to (5) if things finished well.
+When InstallAll.ifort works well, it will show OK! sign finally.
+(one last test (nio_gwsc) may fail in cases, but usually no problem).
 
 ##### (1) make single core LDA part (it is in ecalj/lm7K/).
 Let us assume gfortran case.
