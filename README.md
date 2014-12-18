@@ -29,7 +29,9 @@ Overview
    we can use lmf-MPIK and mpi version of hvccfp0,hx0fp0_sc,hsfp0_sc.
    (although we still have so much room to improve it).
    The PMT allows us to perform
-   the QSGW calculations virtually automatically (10.7566/JPSJ.83.094711). 
+   the QSGW calculations virtually automatically
+   (10.7566/JPSJ.83.094711). http://journals.jps.jp/doi/abs/10.7566/JPSJ.83.094711
+ 
 
 3.  Wannier function generator and effective model generator
    (Maxloc Wannier and effective interaction between Wannier funcitons). 
@@ -61,16 +63,17 @@ in addition to our papers (in the references).
 Install and test
 -----------------------------
 To get a ecalj package, do
-###### >git clone https://github.com/tkotani/ecalj.git
+ >git clone https://github.com/tkotani/ecalj.git
 Then follow these steps explained below.
 
-######  (0) Get ecalj package and get tools.
- --- You can run folling (1)-(4) by a command InstallAll.foobar command at ecalj/
-######  (1) make for single-core LDA part, 
-######  (2) make for MPIK LDA part, 
-######  (3) make for MPIK GW part.
-######  (4) Install test
-######  (5) crystal structure tools
+(0) Get ecalj package and get tools.  
+ --- You can run folling (1)-(4) by a command InstallAll.foobar
+ command at ecalj/  
+(1) make for single-core LDA part,   
+(2) make for MPIK LDA part,   
+(3) make for MPIK GW part.  
+(4) Install test  
+(5) crystal structure tools  
 
 In the following explanation, we assume gfortran in ubuntu. 
 But we can also use ifort, and others in other environment with
