@@ -312,7 +312,7 @@ It depends on your machine. (after editing .bashrc, you have to do
 Set the variable of VESTA=, at the begining of 
 ~/ecalj/StructureTool/viewvesta.py to let it know where is VESTA.
 
-
+----------
 ### How to do version up? ###
 
 Be careful to do version up. It may cause another problem.
@@ -329,8 +329,8 @@ This is to save your changes added to the original (to a file git_diff_backup ) 
 also move your changes to stash.
 
     >git checkout -f             
-     CAUTION!!!: this delete your changes in ecalj/.
-     This recover files controlled by git to the original which was just downloaded.
+    CAUTION!!!: this delete your changes in ecalj/.
+    This recover files controlled by git to the original which was just downloaded.
 
     >git pull                    
     This takes all new changes.
