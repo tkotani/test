@@ -319,29 +319,24 @@ Be careful to do version up. It may cause another problem.
 But it is not so difficult to move it back to original version if you use git.
 An important things is keeping your changes by yourself.
 Especially your own Make.inc.* files (see InstalAll.ifort).
+    >cd ecalj  
+    >git log  # This shows what version you use now.
 
->cd ecalj  
->git log  
+    >git diff > gitdiff_backup    
+This is to save your changes added to the original (to a file git_diff_backup ) for safe.  I recommend you do take git diff >foobar as backup.   
+     >git stash 
+also move your changes to stash.
 
-   This shows what version you use now.
-
->git diff > gitdiff_backup    
-
-This is to save your changes added to the original (to a file git_diff_backup ) for safe.
-   I recommend you do take git diff >foobar as backup.   
-   >git stash also move your changes to stash.
-
->git checkout -f             
+    >git checkout -f             
      CAUTION!!!: this delete your changes in ecalj/.
      This recover files controlled by git to the original which was just downloaded.
 
->git pull                    
+    >git pull                    
     This takes all new changes.
 
 
 I think it is recommended to use 
->gitk --all 
-
+    >gitk --all 
 and read this document. Difference can be easily taken,
 e.g. by >git diff d2281:README 81d27:README (here d2281 and 81d27 are
 several digits of the begining of its version id). 
