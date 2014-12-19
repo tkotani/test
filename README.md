@@ -318,12 +318,12 @@ Set the variable of VESTA=, at the begining of
 Be careful to do version up. It may cause another problem.
 But it is not so difficult to move it back to original version if you use git.
 An important things is keeping your changes by yourself.
-Especially your own Make.inc.* files (see InstalAll.ifort).
-    >cd ecalj  
+Especially your own Make.inc.* files (see InstalAll.ifort).  
+    >cd ecalj
     >git log  # This shows what version you use now.
 
     >git diff > gitdiff_backup    
-This is to save your changes added to the original (to a file git_diff_backup ) for safe.  I recommend you do take git diff >foobar as backup.   
+This is to save your changes added to the original (to a file git_diff_backup ) for safe.  I recommend you do take git diff >foobar as backup. 
     >git stash 
 also move your changes to stash.
 
