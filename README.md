@@ -348,27 +348,28 @@ several digits of the begining of its version id).
 >git show 81d27:README is also useful.  
 
 
+    ###### Documents of ecalj #####################
+    We have three documents.
+    
+    1. GetStarted:
+    ecalj/Document/Manual/EcaljGetstarted.pdf
+    Almost written OK.
+    It gives minimum instruction of ecalj.
+    
+    2. Usage:
+    ecalj/Document/Manual/EcaljUsage.pdf
+    Not yet completed.
+    
+    3. Details:
+    Two papers (but not yet submitted) are
+      ecalj/Document/Manual/pmttheory17.pdf (for PMT)
+      ecalj/Document/Manual/pmtqsgw13.pdf   (for PMT-QSGW)
+    A little extended versions in japanese are
+    ecalj/Document/Manual/ecalj_pmttheory17j.pdf (for PMT)
+    ecalj/Document/Manual/ecalj_pmqsgw13j.pdf   (for PMT-QSGW)
+    We will unify this...
+
 <pre>
-###### Documents of ecalj #####################
-We have three documents.
-
-1. GetStarted:
-ecalj/Document/Manual/EcaljGetstarted.pdf
-Almost written OK.
-It gives minimum instruction of ecalj.
-
-2. Usage:
-ecalj/Document/Manual/EcaljUsage.pdf
-Not yet completed.
-
-3. Details:
-Two papers (but not yet submitted) are
-  ecalj/Document/Manual/pmttheory17.pdf (for PMT)
-  ecalj/Document/Manual/pmtqsgw13.pdf   (for PMT-QSGW)
-A little extended versions in japanese are
-ecalj/Document/Manual/ecalj_pmttheory17j.pdf (for PMT)
-ecalj/Document/Manual/ecalj_pmqsgw13j.pdf   (for PMT-QSGW)
-We will unify this...
 
 
 #######  Usage minimum. (e.g, PMT-QSGW(gwsc) for si)  ###################
