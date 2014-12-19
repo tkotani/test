@@ -324,7 +324,7 @@ Especially your own Make.inc.* files (see InstalAll.ifort).
 
     >git diff > gitdiff_backup    
 This is to save your changes added to the original (to a file git_diff_backup ) for safe.  I recommend you do take git diff >foobar as backup.   
-     >git stash 
+    >git stash 
 also move your changes to stash.
 
     >git checkout -f             
